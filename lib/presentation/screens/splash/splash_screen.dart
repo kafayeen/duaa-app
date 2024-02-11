@@ -55,10 +55,13 @@ class _SplashScreenState extends State<SplashScreen> {
                     decoration: const BoxDecoration(shape: BoxShape.circle),
                     child: Image.asset("assets/png/logo.png")),
               ),
-              Text(
-                  "(كُلُّ أُمَّتي يَدْخُلُونَ الجَنَّةَ إِلَّا مَن أَبَى، قالوا: يا رَسُولَ اللَّهِ، وَمَن يَأْبَى؟ قالَ: مَن أَطَاعَنِي دَخَلَ الجَنَّةَ، وَمَن عَصَانِي فقَدْ أَبَى)",
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyMedium)
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 4.w),
+                child: Text(
+                    "(كُلُّ أُمَّتي يَدْخُلُونَ الجَنَّةَ إِلَّا مَن أَبَى، قالوا: يا رَسُولَ اللَّهِ، وَمَن يَأْبَى؟ قالَ: مَن أَطَاعَنِي دَخَلَ الجَنَّةَ، وَمَن عَصَانِي فقَدْ أَبَى)",
+                    textAlign: TextAlign.center,
+                    style: Theme.of(context).textTheme.bodyMedium),
+              )
             ],
           ),
         ),

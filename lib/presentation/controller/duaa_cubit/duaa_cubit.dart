@@ -41,26 +41,59 @@ class DuaaCubit extends Cubit<DuaaStates> {
   screenShot({required BuildContext context}) {
     image = null;
     Permission permission = Permission.storage;
-    log("permission");
-    permission.request().then((value) {
-      log("request Success");
-      if (value.isGranted) {
-        log("granted Success");
+    permission.request().isGranted.then((value) {
+      if (value) {
+        permission.request().then((value) {
+          screenshotController.capture().then((value) {
+            if (value != null) {
+              getApplicationDocumentsDirectory().then((v) {
+                final imagePath = "${v.path}/screenshot.png";
+                File file = File(imagePath);
+                file.writeAsBytes(value).then((value) {
+                  ImageGallerySaver.saveFile(value.path).then((value) {
+                    popScope = false;
+                    ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                        backgroundColor:
+                            Theme.of(context).scaffoldBackgroundColor,
+                        content: Text(
+                          "تم الألتقاط",
+                          style: Theme.of(context).textTheme.bodySmall,
+                        )));
+                    emit(DuaaScreenShotSuccessState());
+                  }).catchError((e) {
+                    log(e.toString());
+                  });
+                }).catchError((e) {
+                  log(e.toString());
+                });
+              });
+            }
+            //E/gralloc4(14234): Empty SMPTE 2094-40 data
+            //file = File(imagePath).writeAsBytes(bytes) لو ايماج باس فيها صورة وعملت رايت و فيها صورة تانى كدا فايل هيشيل صورة تانية ولا لا
+          }).catchError((e) {
+            log(e.toString());
+            emit(DuaaScreenShotErrorState());
+          });
+          // } else {
+          //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          //       backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          //       content: Text(
+          //         "فشل طلب التخزين",
+          //         style: Theme.of(context).textTheme.bodySmall,
+          //       )));
+          //   emit(DuaaScreenShotSuccessState());
+          // }
+        }).catchError((e) {
+          log(e.toString());
+        });
+      } else {
         screenshotController.capture().then((value) {
-          log("capture");
-
           if (value != null) {
-            log("capture not null");
-
             getApplicationDocumentsDirectory().then((v) {
-              log("getApp");
-
               final imagePath = "${v.path}/screenshot.png";
               File file = File(imagePath);
               file.writeAsBytes(value).then((value) {
-                log("writeAsBytes");
                 ImageGallerySaver.saveFile(value.path).then((value) {
-                  log("Save File");
                   popScope = false;
                   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                       backgroundColor:
@@ -84,18 +117,8 @@ class DuaaCubit extends Cubit<DuaaStates> {
           log(e.toString());
           emit(DuaaScreenShotErrorState());
         });
-      } else {
-        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            backgroundColor: Theme.of(context).scaffoldBackgroundColor,
-            content: Text(
-              "فشل طلب التخزين",
-              style: Theme.of(context).textTheme.bodySmall,
-            )));
-        emit(DuaaScreenShotSuccessState());
       }
-    }).catchError((e) {
-      log(e.toString());
-    });
+    }).catchError((e) {});
   }
 
   int count = 0;

@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:animate_do/animate_do.dart';
 import 'package:duaa/core/local_service/database/madih_naby/madih_naby.dart';
 import 'package:duaa/core/local_service/database/sonan_mahgora_database/sonan_mahgora_database.dart';
@@ -28,12 +26,11 @@ class Choose extends StatelessWidget {
           cubit.position = null;
           if (cubit.delete) {
             cubit.deleteCountry();
-            log("${cubit.delete}");
           }
-          log("${cubit.country}");
           return Scaffold(
             appBar: AppBar(
               centerTitle: true,
+              automaticallyImplyLeading: false,
               title: Text(
                 "منارة التوحيد",
                 style: Theme.of(context).textTheme.bodyMedium,

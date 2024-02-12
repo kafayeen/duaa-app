@@ -10,7 +10,6 @@ class AboutUsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List icon = [
-      EvaIcons.messageSquare,
       EvaIcons.messageCircle,
       EvaIcons.person,
       EvaIcons.bookOpen,
@@ -19,8 +18,7 @@ class AboutUsScreen extends StatelessWidget {
       Icons.attach_money_rounded,
     ];
     List text = [
-      "تابعنا على الإنستجرام",
-      "للشكاوى و المقترحات راسلنا",
+      "تابعنا على الإنستجرام. للتواصل",
       "نسألكم الدعاء لنا. حديث دعاء اربعين شخص غريب مستجابة 'لايصح' ",
       "تم الاستعانة بكتاب الأربعين فى ضحك الصادق الأمين - الشيخ محمد بن شمس الدين",
       "الحصن الواقى مختصرة من كتاب الحصن الواقى - الشيخ عبدالله بن محمد السدحان",
@@ -32,11 +30,6 @@ class AboutUsScreen extends StatelessWidget {
         if (await canLaunchUrl(
             Uri.parse("https://www.instagram.com/kafayeen/"))) {
           launchUrl(Uri.parse("https://www.instagram.com/kafayeen/"));
-        }
-      },
-      () async {
-        if (await canLaunchUrl(Uri.parse("mailto:kabatchawork@gmail.com"))) {
-          launchUrl(Uri.parse("mailto:kabatchawork@gmail.com"));
         }
       },
       () {},
@@ -96,6 +89,8 @@ Widget listTile(
   return Card(
     color: Theme.of(context).primaryColor,
     child: InkWell(
+      highlightColor: Colors.transparent,
+      splashColor: Colors.transparent,
       onTap: onTap,
       child: ListTile(
         leading: Icon(

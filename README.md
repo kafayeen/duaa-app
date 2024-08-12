@@ -1,13 +1,8 @@
-# Duaa App
-## "منارة التوحيد" هو تطبيق شامل يهدف إلى نشر الثقافة الإسلامية وتسهيل الوصول إلى الأذكار والأحاديث والدعاء للمسلمين في جميع أنحاء العالم. يوفر التطبيق مجموعة واسعة من الميزات، بما في ذلك:
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+# Duaa
+### Duaa App is a comprehensive application designed to spread Islamic culture and facilitate access to azkar (remembrances), ahadith (prophetic narrations), and du'a (supplications) for Muslims worldwide. The app offers a wide range of feature
+![image-1024x2000 (1)](https://github.com/user-attachments/assets/4ddb6198-f794-4d4f-a8c5-7f7f9a223da5) 
+![image-1024x2000 (4)](https://github.com/user-attachments/assets/9ef00fc7-1c47-4d31-87df-70c707ecc3b7)
+![image-1024x2000 (3)](https://github.com/user-attachments/assets/bee6b314-0c0d-4909-9ffa-1f155678ff0e)
+![image-1024x2000 (2)](https://github.com/user-attachments/assets/863a97a1-a759-4f2f-8e5a-42d7cf649895)
+![image-1024x2000 (5)](https://github.com/user-attachments/assets/337c3339-8548-45d2-94e4-69bbc7a75d0c) 
+![image-1024x2000](https://github.com/user-attachments/assets/d3afbbd2-9970-4301-add4-53fe083a8b2e)

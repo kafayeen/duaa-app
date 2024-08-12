@@ -1,8 +1,5 @@
-# duaa
-
-A new Flutter project.
-
-## Getting Started
+# Duaa App
+## "منارة التوحيد" هو تطبيق شامل يهدف إلى نشر الثقافة الإسلامية وتسهيل الوصول إلى الأذكار والأحاديث والدعاء للمسلمين في جميع أنحاء العالم. يوفر التطبيق مجموعة واسعة من الميزات، بما في ذلك:
 
 This project is a starting point for a Flutter application.
 
